@@ -58,18 +58,8 @@ function initMap() {
 	});
 	directionsRenderer.setMap(map);
 
-
-	// // The marker, positioned at defaultPos
-	// let marker = new google.maps.Marker({
-	// 	position: defaultPos,
-	// });
-
-	// marker.setMap(map);
-
-
 	let autocompleteStart = new google.maps.places.Autocomplete(inputStartPoint);
 	let autocompleteDestination = new google.maps.places.Autocomplete(inputDestinationPoint);
-
 
 
 	// displaying route
