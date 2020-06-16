@@ -16,6 +16,7 @@ function initMap() {
 	let directionsRenderer = new google.maps.DirectionsRenderer();
 	let infoWindow = new google.maps.InfoWindow;
 	let marker;
+	let bounds = new google.maps.LatLngBounds();
 
 
 	// geolocation 
@@ -34,6 +35,13 @@ function initMap() {
 			});
 
 			marker.setMap(map);
+			bounds.extend(pos);
+			map.fitBounds(bounds);
+			// correct zoom after fitBounds to the current location marker
+			var listener = google.maps.event.addListener(map, "idle", function () {
+				if (map.getZoom() > 18) map.setZoom(18);
+				google.maps.event.removeListener(listener);
+			});
 
 		});
 	}
@@ -44,7 +52,7 @@ function initMap() {
 	// The map, centered at defaultPos
 	let map = new google.maps.Map(
 		document.querySelector('.ba-map'), {
-		zoom: 10,
+		zoom: 16,
 		center: defaultPos,
 		disableDefaultUI: true
 	});
