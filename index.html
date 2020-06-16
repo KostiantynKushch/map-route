@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Route</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta name="description" content="" />
+	<link rel="icon" href="favicon.png" />
+	<link rel="stylesheet" href="css/normalize.css" />
+	<link rel="stylesheet" href="css/layout.css" />
+	<link rel="stylesheet" href="css/style.css" />
+
+</head>
+
+<body>
+
+	<main>
+		<section class="ba-route-map">
+			<div class="ba-container">
+				<h1>Your route on the map</h1>
+
+				<form action="#" class="ba-route">
+					<label> Start location*
+						<input value="" data-start-point type="text" name="start-point">
+					</label>
+					<label> Destination location*
+						<input value="" data-destination type="text" name="destination">
+					</label>
+					<input type="submit" value="Get a Route" class="ba-submit" data-route-submit>
+					<div class="ba-route__error"></div>
+					<!-- /.ba-route__error -->
+				</form>
+
+
+				<div class="ba-map"></div>
+				<!-- /.ba-map -->
+			</div>
+			<!-- /.ba-container -->
+		</section>
+		<!-- /.ba-route-map -->
+	</main>
+
+
+	<script src="./js/app.js"></script>
+	<script async defer
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAJmsyWWcpLk1A76zXB4OV_w6hAKPkrX60&libraries=places&callback=initMap">
+		</script>
+</body>
+
+</html>
